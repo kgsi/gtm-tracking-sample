@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>detail</title>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -31,7 +31,25 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div>
+      <h1>詳細ページ</h1>
+      <button id="TestSend">Click send!</button>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        const el = document.getElementById("TestSend");
+        el.addEventListener(
+          "click",
+          () => {
+            mixpanel.track("Click", {
+              source: "Pat's affiliate site",
+              "Opted out of email": true,
+            });
+            alert("Send!");
+          },
+          false
+        );
+      });
+    </script>
   </body>
 </html>
