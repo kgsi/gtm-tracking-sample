@@ -4,10 +4,11 @@ const { defineConfig } = require("vite");
 module.exports = defineConfig({
   root: "src",
   build: {
+    outDir: "../dist",
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
-        nested: resolve(__dirname, "detail/index.html"),
+        main: resolve(__dirname, "src/index.html"),
+        nested: resolve(__dirname, "src/detail/index.html"),
       },
     },
   },
